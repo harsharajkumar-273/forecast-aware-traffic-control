@@ -1,0 +1,13 @@
+seed: 7
+network: synthetic_2x2
+episode_steps: 240
+forecast_horizon: 5
+history_length: 8
+control_interval: 5
+min_green: 5
+max_green: 45
+disruption: none
+sensor_noise: 0.0
+missing_sensor_rate: 0.0
+agents: 4
+

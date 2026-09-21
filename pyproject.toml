@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "forecast-aware-marl-traffic"
+version = "0.1.0"
+description = "Forecast-aware multi-agent reinforcement learning for urban traffic signals"
+requires-python = ">=3.10"
+dependencies = ["numpy>=1.24"]
+
+[project.optional-dependencies]
+ml = ["torch>=2.1", "torch-geometric>=2.4"]
+serve = ["fastapi>=0.100", "uvicorn[standard]>=0.23", "pydantic>=2"]
+tracking = ["mlflow>=2.8"]
+dev = ["pytest>=7", "ruff>=0.4"]
+
+[project.scripts]
+traffic = "traffic_control.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+
