@@ -12,7 +12,7 @@ python -m traffic_control.cli smoke --seed 7
 python -m traffic_control.cli evaluate --episodes 3 --steps 120 --output runs/v1.json
 ```
 
-The evaluator compares fixed-time, actuated, MAPPO without forecasts, forecast-aware MAPPO, and forecast+uncertainty-aware MAPPO. It reports waiting/travel time, queue length, throughput, forecast MAE/RMSE, and controller latency. Results are JSON and include the full config for reproducibility.
+The evaluator compares fixed-time, actuated, MAPPO without forecasts, forecast-aware MAPPO, and forecast+uncertainty-aware MAPPO. Each MAPPO variant runs `--train-episodes` (default 15) unrecorded training episodes first, updating its policy via a numpy-only REINFORCE step, before the recorded evaluation episodes. It reports waiting/travel time, queue length, throughput, forecast MAE/RMSE, and controller latency. Results are JSON and include the full config for reproducibility.
 
 ## Layout
 

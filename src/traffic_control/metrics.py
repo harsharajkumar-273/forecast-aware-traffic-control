@@ -1,4 +1,3 @@
-import time
 class Metrics:
     def __init__(self): self.rows=[]; self.latencies=[]
     def add(self,row,latency): self.rows.append(row); self.latencies.append(latency)

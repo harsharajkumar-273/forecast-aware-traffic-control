@@ -1,7 +1,9 @@
 """Offline-safe ingestion and calibration utilities for AI Kosh exports."""
-import csv,json
+import csv
+import json
 from collections import defaultdict
 from pathlib import Path
+
 REQUIRED={"timestamp","intersection_id","vehicle_count","queue_length"}
 def read_traffic_csv(path):
     with Path(path).open(newline="") as f: rows=list(csv.DictReader(f))

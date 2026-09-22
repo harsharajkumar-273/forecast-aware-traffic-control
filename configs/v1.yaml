@@ -10,4 +10,5 @@ disruption: none
 sensor_noise: 0.0
 missing_sensor_rate: 0.0
 agents: 4
+train_episodes: 15
 

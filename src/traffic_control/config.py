@@ -1,5 +1,6 @@
-from dataclasses import dataclass, asdict
 import json
+from dataclasses import asdict, dataclass
+
 
 @dataclass
 class Config:
@@ -14,6 +15,7 @@ class Config:
     missing_sensor_rate: float = 0.0
     disruption: str = "none"
     agents: int = 4
+    train_episodes: int = 15
 
     def to_dict(self): return asdict(self)
     def to_json(self): return json.dumps(self.to_dict(), sort_keys=True)
